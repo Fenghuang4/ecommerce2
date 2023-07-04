@@ -10,9 +10,9 @@ public class Cart {
     private Book temp;
 
     public Cart() {
-        ArrayList bookList;
-        double total;
-        Book temp;
+        this.bookList = null;
+        this.total = 0.0;
+        this.temp = null;
     }
     public void addBook(Book inputBook) {
         bookList.add(inputBook);
