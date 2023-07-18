@@ -2,27 +2,28 @@ package Modules;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
+//Make Cart Genaric
 public class Cart {
-    private ArrayList bookList;
+    private ArrayList productList;
     private double total;
 
-    private Book temp;
+    private Product temp;
 
     public Cart() {
-        this.bookList = null;
+        this.productList = null;
         this.total = 0.0;
         this.temp = null;
     }
-    public void addBook(Book inputBook) {
-        bookList.add(inputBook);
+    public void addProduct(Product inputProduct) {
+
+        productList.add(inputProduct);
     }
 
     public double getTotal() {
-        Iterator bookIterator = bookList.iterator();
+        Iterator bookIterator = productList.iterator();
 
         while(bookIterator.hasNext()) {
-            temp = (Book) bookIterator.next();
+            temp = (Product) bookIterator.next();
             total += temp.getCost();
         }
         return total;

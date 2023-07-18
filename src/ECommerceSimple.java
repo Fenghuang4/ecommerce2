@@ -1,26 +1,34 @@
 import Modules.Book;
 import Modules.Cart;
+import Modules.Computer;
+import Modules.Product;
 
 public class ECommerceSimple {
 
     public static void main(String[] args) {
-        Book javaBook = new Book("ISNB0001", "How to program in Java", "John Doe", 24.5);
-        javaBook.printBookDetails();
+        Product javaBook = new Book("ISNB0001", "How to program in Java", 24.5,"John Doe");
+        javaBook.printDetails();
 
-        Book cPlusPlusBook = new Book("ISNB0002", "How to program in c Plus Plus", "Sally Smith", 19.9);
-        cPlusPlusBook.printBookDetails();
+        Product cPlusPlusBook = new Book("ISNB0002", "How to program in c Plus Plus", 19.9,"Sally Smith");
+        cPlusPlusBook.printDetails();
 
-        Book bookInitializedFromLine = new Book("ISNB0003, How to program in JavaScript, Adam, 21.2");
+        Product bookInitializedFromLine = new Book("ISNB0003", "How to program in JavaScript", 21.2,"Adam");
 
+        Product T14 = new Computer("20UD", "Lenovo", 1000);
+        /*
+        Initialize cart object.
+        */
 
 
         Cart myCart = new Cart();
-        myCart.addBook(javaBook);
-        myCart.addBook(cPlusPlusBook);
-        myCart.addBook(bookInitializedFromLine);
+        myCart.addProduct(javaBook);
+        myCart.addProduct(cPlusPlusBook);
+        myCart.addProduct(bookInitializedFromLine);
+        myCart.addProduct(T14);
 
         double cartTotal = myCart.getTotal();
 
         System.out.println("Cart Total: " + cartTotal);
+
     }
 }

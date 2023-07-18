@@ -3,7 +3,7 @@ package Modules;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Book {
+public class Book extends Product {
 
     //Instance Variables
     private String ISBN;
@@ -14,7 +14,8 @@ public class Book {
     public static int count = 0;
 
     //Constructor - initialize instance variables
-    public Book(String isbnInput, String titleInput, String authorInput, double costInput) {
+    public Book(String isbnInput, String titleInput, double costInput, String authorInput) {
+        super(isbnInput, titleInput, costInput);
         authors = new ArrayList();
         this.ISBN = isbnInput;
         this.title = titleInput;
@@ -23,19 +24,19 @@ public class Book {
         authors.add(authorInput.split(" "));
     }
 
-    public Book(String commaSeperatedLine) {
-        //your implementation
-        // look at split method in String,
-        // initialize instance variable
+//    public Book(String commaSeperatedLine) {
+//        //your implementation
+//        // look at split method in String,
+//        // initialize instance variable
+//
+//        String[] bookDetails = commaSeperatedLine.split(",");
+//        this.ISBN = bookDetails[0];
+//        this.title = bookDetails[1];
+//        this.cost = Double.parseDouble(bookDetails[3]);
+//        this.count++;
+//    }
 
-        String[] bookDetails = commaSeperatedLine.split(",");
-        this.ISBN = bookDetails[0];
-        this.title = bookDetails[1];
-        this.cost = Double.parseDouble(bookDetails[3]);
-        this.count++;
-    }
-
-    public void printBookDetails() {
+    public void printDetails() {
         System.out.println(" ISBN Number :"+ISBN + " title : "+title+ " author: "+ " cost:"+cost);
         Iterator authorsIterator = authors.iterator();
         while (authorsIterator.hasNext()){
